@@ -7,6 +7,8 @@ const cancelBtn = addMovieScreen.querySelector(".modal__actions .btn--passive");
 const addBtn = cancelBtn.nextElementSibling;
 const inputArray = addMovieScreen.querySelectorAll("input");
 
+const movieList = [];
+
 const toggleBackdrop = () => {
     backDrop.classList.toggle("visible");
 };
@@ -22,6 +24,12 @@ addMovieBtn.addEventListener("click", () => {
 
 const backDropClickHandler = () => {
     toggleAddMovieScreen();
+};
+
+const clearUserInput = () => {
+    for (const input of inputArray) {
+        input.value = "";
+    }
 };
 
 const validateUserInput = (valueArray) => {
@@ -42,13 +50,28 @@ const validateUserInput = (valueArray) => {
 
 const addBtnHandler = () => {
     if (validateUserInput(inputArray)) {
+        const movie = {
+            title: inputArray[0].value,
+            url: inputArray[1].value,
+            rating: inputArray[2].value,
+        };
+
+        movieList.push(movie);
+        console.log(movieList);
+        toggleAddMovieScreen();
+        clearUserInput();
     } else {
         alert("Bro the input data is invalid");
     }
 };
 
+const cancelBtnHandler = () => {
+    toggleAddMovieScreen();
+    clearUserInput();
+};
+
 backDrop.addEventListener("click", backDropClickHandler);
 
-cancelBtn.addEventListener("click", toggleAddMovieScreen);
+cancelBtn.addEventListener("click", cancelBtnHandler);
 
 addBtn.addEventListener("click", addBtnHandler);
