@@ -30,5 +30,3 @@ startGameButton.addEventListener("click", function () {
 
     console.log(playerChoice);
 });
-
-console.log("testing the magic");
