@@ -6,22 +6,10 @@ btn.addEventListener("click", () => {
     section.classList.toggle("john-cena");
 });
 
-const list = document.querySelector("ol").children;
+const list = document.querySelector("ol");
 
-for (let i = 0; i < list.length; i++) {
-    console.log(list[i].textContent);
-}
+const item = document.createElement("li");
 
-console.log("The for of loop");
+item.innerText = "List Item 5";
 
-for (const li of list) {
-    console.log(li.textContent);
-}
-
-console.log("The for in loop");
-
-const person = { name: "Kenobi", profession: "Jedi" };
-
-for (const key in person) {
-    console.log(person[key]);
-}
+const item2 = item.cloneNode(false);
