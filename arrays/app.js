@@ -218,4 +218,15 @@ const sum = arr.reduce((sum, value) => sum + value);
 
 console.log(sum);
 
+
+const arr = [10, 34, 88, "hello", 87];
+
+copy = arr.slice(0, 3);
+console.log(copy);
+
+const valu = arr.splice(-2, 1, 45, 90);
+console.log(valu);
+
+console.log(arr);
+
 */
