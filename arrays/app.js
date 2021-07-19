@@ -99,6 +99,22 @@ console.log(arr5);
 
 */
 
-const test = "hello";
-console.log(test);
+/*
 
+Findng the index of values in arrays
+
+const greeting = "hello";
+
+console.log(greeting);
+
+console.log("God damn");
+
+const arr1 = [1, 3, 5, 8.5, 3, "hello", { profession: "Jedi Master" }];
+
+console.log(arr1.indexOf(5));
+
+console.log(arr1.lastIndexOf(3));
+
+console.log(arr1.indexOf({ profession: "Jedi" }));
+
+*/
