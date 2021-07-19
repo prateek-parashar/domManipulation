@@ -140,4 +140,62 @@ console.log(person);
 
 console.log(personIndex);
 
+
+const arr1 = [3, 5, 6, "hello", 6, 7];
+
+console.log(arr1.includes("hello"));
+
+*/
+
+/* 
+
+Methods to sort the array, map and forEach loops
+
+const prices = [10, 50, 55, 78, 100];
+const taxValue = 0.5;
+const taxAdjusted = [];
+
+prices.forEach((element, idx, prices) => {
+    const priceObject = { index: idx, taxPrice: element * (1 + taxValue) };
+    taxAdjusted.push(priceObject);
+});
+
+console.log(taxAdjusted);
+
+const mappedArray = prices.map((e) => e * 2);
+console.log(mappedArray);
+
+const personData = [{ name: "Thomas" }, { name: "Ozil" }, { name: "Max" }];
+
+const person = personData.find((person) => {
+    return person.name === "Thomas";
+});
+
+console.log(person);
+
+const mappedPriceArray = prices.map((price, idx, prices) => {
+    return { index: idx, value: price * (1 + taxValue) };
+});
+
+console.log(mappedPriceArray);
+
+console.log(mappedArray);
+
+console.log(mappedArray.sort());
+
+const reverseArray = mappedArray.reverse();
+console.log(reverseArray);
+
+const sortedArray = mappedArray.sort((a, b) => {
+    if (a > b) {
+        return 1;
+    } else if (a === b) {
+        return 0;
+    } else {
+        return -1;
+    }
+});
+
+console.log(sortedArray);
+
 */
