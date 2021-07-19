@@ -198,4 +198,24 @@ const sortedArray = mappedArray.sort((a, b) => {
 
 console.log(sortedArray);
 
+
+const arr = [3, 6, 22, 18.5, 90];
+
+const into2 = arr.map((e) => e * 2);
+
+console.log(into2);
+
+const above40 = into2.filter((e) => e > 40);
+console.log(above40);
+
+const complicatedSum = arr.reduce((prevValue, currentValue, idx, arr) => {
+    return prevValue + currentValue;
+}, 0);
+
+console.log(complicatedSum);
+
+const sum = arr.reduce((sum, value) => sum + value);
+
+console.log(sum);
+
 */
