@@ -118,3 +118,26 @@ console.log(arr1.lastIndexOf(3));
 console.log(arr1.indexOf({ profession: "Jedi" }));
 
 */
+
+/*
+Find methods in js
+
+const personData = [{ name: "Thomas" }, { name: "Ozil" }, { name: "Max" }];
+
+const person = personData.find((player, idx, playerList) => {
+    console.log(idx);
+    return player.name === "Max";
+});
+
+const personIndex = personData.findIndex((player, idx, playerList) => {
+    console.log(idx);
+    return player.name === "Max";
+});
+
+personData[0].name = "Horace";
+
+console.log(person);
+
+console.log(personIndex);
+
+*/
