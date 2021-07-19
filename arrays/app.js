@@ -98,3 +98,7 @@ arr5.push(...kenobi);
 console.log(arr5);
 
 */
+
+const test = "hello";
+console.log(test);
+
