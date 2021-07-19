@@ -230,3 +230,19 @@ console.log(valu);
 console.log(arr);
 
 */
+
+const value = "hello;test;god;damn";
+
+const valueArray = value.split(";");
+
+console.log(valueArray);
+
+console.log(valueArray.join(";") === value);
+
+const copy = [...valueArray];
+
+const numArray = [2, 55, 78, 33, 99];
+
+console.log(Math.max(...numArray));
+
+console.log(copy);
