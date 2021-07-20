@@ -229,7 +229,7 @@ console.log(valu);
 
 console.log(arr);
 
-*/
+
 
 const value = "hello;test;god;damn";
 
@@ -246,3 +246,12 @@ const numArray = [2, 55, 78, 33, 99];
 console.log(Math.max(...numArray));
 
 console.log(copy);
+
+
+const person = ["General", "Kenobi", "Jedi", "Master"];
+
+const [firstName, lastName, ...rest] = person;
+
+console.log(firstName, lastName, rest);
+
+*/
