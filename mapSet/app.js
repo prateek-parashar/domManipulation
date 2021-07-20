@@ -37,7 +37,10 @@ map.set("tset", 1);
 
 console.log(map.entries();
 
+
+let person = { name: "Max", age: 30 };
+const weak = new WeakSet();
+
+weak.add(person);
+
 */
-
-
-
