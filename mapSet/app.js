@@ -18,3 +18,26 @@ for (const i of id.entries()) {
 }
 
 */
+
+/*
+Destructuring of arrays
+
+const idArray = ["test1", "test2", "test3", "test1"];
+
+console.log(idArray.entries());
+
+for (const [i, entry] of idArray.entries()) {
+    console.log(`${i} ${entry}`);
+}
+
+
+const map = new Map();
+
+map.set("tset", 1);
+
+console.log(map.entries();
+
+*/
+
+
+
