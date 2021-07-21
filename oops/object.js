@@ -162,3 +162,39 @@ person.r = greetArrow;
 person.r();
 
 */
+
+const calculator = {
+    valueA: 0,
+    valueB: 0,
+
+    read() {
+        this.valueA = prompt("Hello there");
+        this.valueB = prompt("Hello there");
+    },
+
+    sum() {
+        return this.valueA + this.valueB;
+    },
+    mul() {
+        return this.valueA * this.valueB;
+    },
+};
+
+const person = {
+    title: "Mr",
+    name: "Robert",
+};
+
+const greet = function (greeting) {
+    console.log(`${greeting} ${this.title} ${this.name}`);
+};
+
+const names = ["Terry", "Rosa", "Jake"];
+
+greet.call(person, "Hola");
+
+const hello = function (name1, name2, name3) {
+    console.log(`${this.toUpperCase()} ${name1}, ${name3}`);
+};
+
+hello.apply("hola", names);
