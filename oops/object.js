@@ -84,6 +84,9 @@ console.log(sum);
 
 */
 
+/* 
+For in loop, copying objects
+
 const user = { name: "Harry" };
 console.log(user);
 const wizard = user;
@@ -109,3 +112,53 @@ console.log(cloneWizard);
 const govtClone = Object.assign({}, darkWizard);
 
 console.log(govtClone);
+
+*/
+
+/* 
+This keyword introduction and methods in objects
+
+const person = {
+    name: "Mark",
+    age: 25,
+    sayHi() {
+        console.log(`Hello, my name is ${this.name}`);
+    },
+};
+
+const admin = {
+    name: "Derek",
+    age: 25,
+    sayHi() {
+        console.log(`Hello, my name is ${this.name}`);
+    },
+};
+
+for (const key in person) {
+    console.log(typeof person[key]);
+}
+
+console.log(person);
+
+const greet = function () {
+    console.log(this);
+    console.log(`Hi there, my name is ${this.name}`);
+};
+
+let name = "Hello";
+const greetArrow = () => {
+    console.log(`Hi there, my name is ${this.name}`);
+};
+
+person.sayHi();
+
+person.f = greet;
+admin.f = greet;
+
+person.f();
+admin.f();
+
+person.r = greetArrow;
+person.r();
+
+*/
