@@ -163,6 +163,10 @@ person.r();
 
 */
 
+/*
+Constructor functions
+This and the call, apply functions. 
+
 const calculator = {
     valueA: 0,
     valueB: 0,
@@ -198,3 +202,23 @@ const hello = function (name1, name2, name3) {
 };
 
 hello.apply("hola", names);
+
+function Calculator() {
+    this.a = 0;
+    this.b = 0;
+
+    this.read = function () {
+        this.a = +prompt("hello");
+        this.b = +prompt("hello");
+    };
+
+    this.sum = function () {
+        return this.a + this.b;
+    };
+
+    this.mul = function () {
+        return this.a * this.b;
+    };
+}
+
+*/
