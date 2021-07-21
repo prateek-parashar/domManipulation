@@ -1,3 +1,4 @@
+/*
 const user = new Object();
 
 const literalUser = {
@@ -80,3 +81,31 @@ for (key in salaries) {
 }
 
 console.log(sum);
+
+*/
+
+const user = { name: "Harry" };
+console.log(user);
+const wizard = user;
+
+wizard.wand = "Potter";
+
+console.log(user);
+
+console.log(wizard === user);
+
+const darkWizard = {};
+
+for (prop in wizard) {
+    darkWizard[prop] = wizard[prop];
+    console.log(prop);
+}
+
+console.log(darkWizard);
+
+const cloneWizard = { ...darkWizard };
+console.log(cloneWizard);
+
+const govtClone = Object.assign({}, darkWizard);
+
+console.log(govtClone);
