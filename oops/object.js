@@ -222,3 +222,98 @@ function Calculator() {
 }
 
 */
+
+/*
+Symbols in js
+
+const id = Symbol("id");
+
+console.log(id.description);
+
+console.log(id.toString());
+console.log(id);
+
+const user = {
+    [id]: 23,
+    name: "jake",
+    age: 37,
+};
+
+for (const key in user) {
+    console.log(key);
+}
+
+const copy = Object.assign({}, user);
+
+console.log(copy);
+
+console.log(copy[id] === user[id]);
+
+console.log(copy[id]);
+
+const testUser = { name: "John" };
+console.log(1 + testUser);
+
+console.log(testUser.valueOf());
+
+*/
+
+/*
+Primitives as objects 
+
+const val = "Hello";
+
+const test = Object.assign({}, val);
+
+console.log(test);
+
+console.log(typeof test);
+
+console.log(val.toUpperCase());
+
+*/
+
+/*
+Numbers in javascript
+*/
+
+const val = 100;
+const bigVal = 1e9;
+
+console.log(bigVal);
+
+const smallVal = 1e-5;
+console.log(smallVal);
+
+console.log(0.1 + 0.2);
+
+const tset = parseInt("98980al000000");
+
+console.log(tset);
+
+console.log((6.35).toFixed(1));
+
+console.log(Math.round(6.35 * 10) / 10);
+
+console.log(Math.round(6.35));
+
+let typer;
+console.log(typeof typer);
+console.log(isNaN(typer));
+
+const random = (min, max) => {
+    let randomVal = Math.random() * 10;
+    if (randomVal < max && randomVal > min) {
+        return randomVal;
+    } else {
+        return random(min, max);
+    }
+};
+
+const randomEnhanced = (min, max) => {
+    let val = Math.random() * (max - min);
+    let x = Math.floor(val) + min;
+    return x;
+};
+
+console.log(randomEnhanced(5, 9));
