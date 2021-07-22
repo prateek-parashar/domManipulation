@@ -76,3 +76,43 @@ const checkSpam = (str) => {
 console.log("testthis".slice(0, 3));
 
 */
+
+/*
+Array methods and quirks
+const arr = [3, 4, 5, 2];
+
+let val = arr.shift();
+
+arr.unshift(78);
+
+console.log(arr);
+
+const bigArr = new Array(300);
+
+console.log(bigArr.length);
+bigArr[980] = 88;
+
+console.log(bigArr.length);
+
+bigArr.length = 10;
+console.log(bigArr);
+
+bigArr.length = 1000;
+
+console.log(bigArr);
+console.log((bigArr.length = 4));
+
+console.log(bigArr);
+
+const arr1 = [3, 5, "hello"];
+
+const arr3 = ["*", "98798", 333.333];
+
+const arr5 = arr1.concat(arr3, "tset");
+
+console.log(arr5);
+
+let v = arr5.find((e) => e === "*");
+console.log(v);
+
+*/
