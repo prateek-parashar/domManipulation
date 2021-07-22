@@ -275,7 +275,6 @@ console.log(val.toUpperCase());
 
 /*
 Numbers in javascript
-*/
 
 const val = 100;
 const bigVal = 1e9;
@@ -317,3 +316,5 @@ const randomEnhanced = (min, max) => {
 };
 
 console.log(randomEnhanced(5, 9));
+
+*/
