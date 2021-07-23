@@ -189,3 +189,9 @@ console.log(unique(strings));
 console.log(strings);
 
 */
+
+const value = "slkjflsdfjsdf";
+
+for (char of value) {
+    console.log(char);
+}
