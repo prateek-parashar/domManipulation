@@ -312,3 +312,36 @@ console.log(age);
 console.log(isAdmin);
 
 */
+
+/*
+Dates 
+
+const val = new Date();
+
+console.log(val);
+
+console.log(val.getTime());
+
+console.log(new Date(val.getTime()));
+
+let value = new Date("2021/05/27");
+
+console.log(value);
+
+console.log(val.getHours());
+console.log(val.getUTCHours());
+
+let date = new Date();
+
+date.setDate(date.getDate() + 2);
+
+console.log(date);
+
+let test = new Date("Feb 20, 2012, 3:12");
+
+let test2 = new Date(2012, 1, 20, 3, 12);
+
+console.log(test);
+console.log(test2);
+
+*/
