@@ -191,8 +191,49 @@ console.log(strings);
 
 */
 
-const value = "slkjflsdfjsdf";
+/* 
 
-for (char of value) {
-    console.log(char);
+Map and sets
+
+const map = new Map();
+
+const john = {
+    name: "John",
+    age: 45,
+};
+
+map.set(john, "Sgt");
+
+const terry = john;
+
+console.log(map.get(john));
+
+map.delete(terry);
+
+let recipeMap = new Map([
+    ["cucumber", 500],
+    ["tomatoes", 350],
+    ["onion", 50],
+]);
+
+for ([key, val] of recipeMap.entries()) {
+    console.log(key);
+    console.log(val);
 }
+
+console.log(Object.entries(john));
+
+recipeObj = Object.fromEntries(recipeMap);
+
+console.log(recipeObj);
+console.log(recipeMap.size);
+
+recipeMap.forEach((val, key, map) => {
+    console.log(val);
+    console.log(key);
+});
+
+recipeMap.clear();
+console.log(recipeMap.has("tomatoes"));
+
+*/
