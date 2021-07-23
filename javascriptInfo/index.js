@@ -345,3 +345,35 @@ console.log(test);
 console.log(test2);
 
 */
+
+/*
+JSON stringify and JSON parse
+
+let user = {
+    name: { firstName: "John", lastName: "Smith" },
+    age: 20,
+    isMale: true,
+};
+
+let json = JSON.stringify(user);
+
+console.log(json);
+
+let room = {
+    number: 23,
+};
+
+let meetup = {
+    title: "Conference",
+    participants: ["john", "ann"],
+    number: [3, 4, 5, 6],
+};
+
+console.log(JSON.stringify(meetup));
+
+meetup.place = room; // meetup references room
+room.occupiedBy = meetup; // room references meetup
+
+// Here converting meetup and room to JSON would result in an error as there's a cyclic reference
+
+*/
