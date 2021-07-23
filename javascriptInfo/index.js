@@ -237,3 +237,61 @@ recipeMap.clear();
 console.log(recipeMap.has("tomatoes"));
 
 */
+
+/*
+Object.entries() and keys
+
+const tset = "hello";
+
+const set = new Set(tset);
+
+console.log(set);
+
+console.log(Array.from(set));
+
+const map = new Map();
+
+map.set(3, "test");
+
+const mapArr = Array.from(map.values());
+
+console.log(mapArr);
+
+// ...Your code...
+function aclean(arr) {
+    const valueMap = new Map();
+    arr.forEach((val) => {
+        val = val.toLowerCase();
+        let smallSet = new Set(val);
+        if (!valueMap.has(smallSet)) {
+            valueMap.set(smallSet, val);
+        }
+    });
+
+    return Array.from(valueMap.values());
+}
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+console.log(aclean(arr));
+
+const setA = new Set("pan");
+const setB = new Set("nap");
+
+console.log(setA === setB);
+
+console.log(setB);
+
+let salaries = {
+    John: 100,
+    Pete: 300,
+    Mary: 250,
+};
+
+const sumSalaries = (salaryObj) => {
+    return Array.from(Object.values(salaryObj)).reduce((sum, element) => sum + element);
+};
+
+console.log(sumSalaries(salaries));
+
+*/
