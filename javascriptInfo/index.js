@@ -377,3 +377,5 @@ room.occupiedBy = meetup; // room references meetup
 // Here converting meetup and room to JSON would result in an error as there's a cyclic reference
 
 */
+
+console.log("Hello my own pc");
