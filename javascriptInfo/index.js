@@ -379,3 +379,5 @@ room.occupiedBy = meetup; // room references meetup
 */
 
 console.log("Hello my own pc");
+
+console.log("Hahahha, hello from the client server vsCode");
