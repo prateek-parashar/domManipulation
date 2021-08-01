@@ -3,7 +3,6 @@ Methods to create arrays
 const arr1 = ["tset", 4, { hello: "hi htere" }];
 
 
-console.log(arr1);
 
 const arr2 = Array("hello", "God damn it", 57);
 
