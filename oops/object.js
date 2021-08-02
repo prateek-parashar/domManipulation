@@ -318,3 +318,17 @@ const randomEnhanced = (min, max) => {
 console.log(randomEnhanced(5, 9));
 
 */
+
+const person = {
+    name: "hello",
+    age: 30,
+};
+
+console.log(person.name);
+
+console.log(person["name"]);
+
+delete person.name;
+
+console.log(person);
+
