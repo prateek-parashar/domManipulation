@@ -17,29 +17,27 @@ const addMovieHandler = () => {
             [extraName]: extraValue,
         },
         id: Math.random(),
+        getFormattedTitle: () => {
+            return this.info.title.toUpperCase();
+        },
     };
 
     movieArray.push(movie);
 
-    const listElm = document.createElement("li");
-
-    listElm.innerText = movie.info.title;
-
-    movieList.append(listElm);
     renderMovieList();
 };
 
 const renderMovieList = (arr = movieArray) => {
-    console.log(arr);
     if (arr.length > 0) {
         movieList.classList.add("visible");
     }
 
     movieList.innerHTML = "";
 
-    arr.forEach((element) => {
+    arr.forEach((movie) => {
         const listElm = document.createElement("li");
-        listElm.innerText = element.info.title;
+        let { getFormattedTitle } = movie;
+        listElm.innerText = getFormattedTitle.call(movie);
         movieList.append(listElm);
     });
 };
