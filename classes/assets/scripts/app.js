@@ -51,4 +51,3 @@ const productList = {
 };
 
 productList.renderProductList();
-console.log("hello");
