@@ -8,6 +8,26 @@ class Product {
         this.description = description;
         this.imageURL = imageURL;
     }
+
+    createProductElement() {
+        const listElm = document.createElement("li");
+        listElm.className = "product-item";
+
+        listElm.innerHTML = `
+                <div>
+                    <img src=${this.imageURL}>
+                        <div class = "product-item__content">
+                            <h2> ${this.title}<h2>
+                            <h3> ${this.price}<h3>
+                            <p> ${this.description} </p>
+                            <button> Add to Cart </button>
+                        </div>
+                </div>
+
+            `;
+
+        return listElm;
+    }
 }
 
 const productList = {
@@ -28,23 +48,7 @@ const productList = {
         productListing.classList.add("product-list");
 
         this.productArray.forEach((product) => {
-            const listElm = document.createElement("li");
-            listElm.className = "product-item";
-
-            listElm.innerHTML = `
-                <div>
-                    <img src=${product.imageURL}>
-                        <div class = "product-item__content">
-                            <h2> ${product.title}<h2>
-                            <h3> ${product.price}<h3>
-
-                            <p> ${product.description} </p>
-
-                            <button> Add to Cart </button>
-                        </div>
-                </div>
-
-            `;
+            const listElm = product.createProductElement();
             productListing.append(listElm);
         });
     },
