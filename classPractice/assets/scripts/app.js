@@ -1,6 +1,14 @@
 class ProjectItem {
     constructor(id) {
         this.id = id;
+        this.toggleButton = document.getElementById(this.id).lastElementChild;
+        this.toggleState();
+    }
+
+    toggleState() {
+        this.toggleButton.addEventListener("click", () => {
+            console.log(this.id);
+        });
     }
 }
 
@@ -13,8 +21,10 @@ class ProjectList {
         for (const item of projectItemList) {
             this.projectItems.push(new ProjectItem(item.id));
         }
+    }
 
-        console.log(this.projectItems);
+    switchProject(projectItemId) {
+        this.projectItems = this.projectItems.filter((p) => p.id !== projectItemId);
     }
 }
 
