@@ -16,3 +16,11 @@ for (let btn of buttonList) {
 const overLay = document.querySelector(".overlay");
 
 overLay.addEventListener("click", showModalHandler);
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        if (!document.querySelector(".modal").classList.contains("hidden")) {
+            showModalHandler();
+        }
+    }
+});
