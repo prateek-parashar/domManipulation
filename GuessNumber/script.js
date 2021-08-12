@@ -2,7 +2,8 @@
 
 const SUCCESS_TEXT = "Congratulations! You got it ";
 
-const checkButton = document.querySelector(".btn.check");
+const checkButton = document.querySelector(".check");
+const resetButton = document.querySelector(".again");
 
 let secretNumber = 0;
 
@@ -55,5 +56,13 @@ const init = () => {
         checkButtonHandler(secretNumber);
     });
 };
+
+resetButton.addEventListener("click", () => {
+    document.body.style.backgroundColor = "#222";
+    document.querySelector(".score").textContent = 20;
+    document.querySelector(".guess").value = "";
+    document.querySelector(".number").textContent = "?";
+    document.querySelector(".message").textContent = "Go on, guess now";
+});
 
 init();
