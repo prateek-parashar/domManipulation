@@ -63,6 +63,7 @@ resetButton.addEventListener("click", () => {
     document.querySelector(".guess").value = "";
     document.querySelector(".number").textContent = "?";
     document.querySelector(".message").textContent = "Go on, guess now";
+    init();
 });
 
 init();
