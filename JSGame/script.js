@@ -38,6 +38,13 @@ const init = () => {
     // Default the active player to 0
     player0.isActive = true;
 
+    //Remove the winner styles from the DOM
+    let winner = document.getElementsByClassName("player--winner");
+
+    for (const element of winner) {
+        element.classList.remove("player--winner");
+    }
+
     //Hide the dice
     dice.classList.add("hidden");
 
