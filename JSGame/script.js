@@ -1,6 +1,7 @@
 "use strict";
 
 let ACTIVE_PLAYER = 0;
+const WINNING_SCORE = 10;
 
 const player0 = {
     number: 0,
@@ -61,6 +62,9 @@ const rollDiceBtnHandler = () => {
     if (randomNumber !== 1) {
         activePlayer.currentScore += randomNumber;
         activePlayer.currentScoreElm.textContent = activePlayer.currentScore;
+        if (activePlayer.currentScore + activePlayer.totalScore >= WINNING_SCORE) {
+            document.querySelector(`.player--${getActivePlayer().number}`).classList.add("player--winner");
+        }
     } else {
         activePlayer.currentScore = 0;
         activePlayer.currentScoreElm.textContent = activePlayer.currentScore;
