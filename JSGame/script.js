@@ -44,6 +44,7 @@ const init = () => {
     document.querySelector(`.player--${getActivePlayer().number}`).classList.add("player--active");
 
     rollDiceBtn.addEventListener("click", rollDiceBtnHandler);
+    holdBtn.addEventListener("click", holdButtonHandler);
 };
 
 const rollDiceBtnHandler = () => {
@@ -65,6 +66,15 @@ const rollDiceBtnHandler = () => {
         activePlayer.currentScoreElm.textContent = activePlayer.currentScore;
         switchPlayer();
     }
+};
+
+const holdButtonHandler = () => {
+    const activePlayer = getActivePlayer();
+    activePlayer.totalScore += activePlayer.currentScore;
+    activePlayer.totalScoreElm.textContent = activePlayer.totalScore;
+    activePlayer.currentScore = 0;
+    activePlayer.currentScoreElm.textContent = activePlayer.currentScore;
+    switchPlayer();
 };
 
 const switchPlayer = () => {
@@ -99,3 +109,5 @@ const generateRandomNumber = (low, high) => {
 };
 
 init();
+
+newGameBtn.addEventListener("click", init);
