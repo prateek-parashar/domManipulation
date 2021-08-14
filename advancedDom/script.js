@@ -31,3 +31,18 @@ document.addEventListener("keydown", function (e) {
         closeModal();
     }
 });
+
+// Implementation of smooth scrolling
+const learnMoreBtn = document.querySelector(".btn--scroll-to");
+const section1 = document.getElementById("section--1");
+
+learnMoreBtn.addEventListener("click", () => {
+    // const sectionCoord = section1.getBoundingClientRect();
+    // window.scrollTo({
+    // top: sectionCoord.top + window.pageYOffset,
+    // left: 0,
+    // behavior: "smooth",
+    // });
+
+    section1.scrollIntoView({ behavior: "smooth" });
+});
