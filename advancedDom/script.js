@@ -34,7 +34,7 @@ document.addEventListener("keydown", function (e) {
 
 // Testing the dom manipulation techniques
 
-// Selecting elements
+// Manipulating elements
 const header = document.querySelector(".header");
 
 const cookieAlert = document.createElement("div");
@@ -46,12 +46,14 @@ const cookieConfirmButton = document.createElement("button");
 cookieConfirmButton.innerText = "Hell yeah Bitch";
 cookieConfirmButton.className = "btn";
 
+cookieConfirmButton.addEventListener("click", () => {
+    cookieAlert.remove();
+});
 cookieAlert.insertAdjacentElement("beforeend", cookieConfirmButton);
 
 header.append(cookieAlert);
 
-header.before(cookieAlert.cloneNode(true));
+// Style manipulation with JS
 
-cookieConfirmButton.addEventListener("click", () => {
-    cookieAlert.remove();
-});
+cookieAlert.style.backgroundColor = "lightgrey";
+document.documentElement.style.setProperty("--color-primary", "pink");
