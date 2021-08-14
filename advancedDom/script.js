@@ -31,29 +31,3 @@ document.addEventListener("keydown", function (e) {
         closeModal();
     }
 });
-
-// Testing the dom manipulation techniques
-
-// Manipulating elements
-const header = document.querySelector(".header");
-
-const cookieAlert = document.createElement("div");
-
-cookieAlert.textContent = `Click me if you don't want cookies!`;
-cookieAlert.className = "cookie-message";
-
-const cookieConfirmButton = document.createElement("button");
-cookieConfirmButton.innerText = "Hell yeah Bitch";
-cookieConfirmButton.className = "btn";
-
-cookieConfirmButton.addEventListener("click", () => {
-    cookieAlert.remove();
-});
-cookieAlert.insertAdjacentElement("beforeend", cookieConfirmButton);
-
-header.append(cookieAlert);
-
-// Style manipulation with JS
-
-cookieAlert.style.backgroundColor = "lightgrey";
-document.documentElement.style.setProperty("--color-primary", "pink");
