@@ -82,9 +82,17 @@ tabsContainer.addEventListener("click", function (e) {
     if (e.target.classList.contains("operations__tab")) {
         e.target.classList.add("operations__tab--active");
 
+        document
+            .querySelector(`.operations__content--${e.target.dataset.tab}`)
+            .classList.add("operations__content--active");
+
         [...e.target.parentElement.children].forEach((element) => {
             if (element !== e.target) {
                 element.classList.remove("operations__tab--active");
+
+                document
+                    .querySelector(`.operations__content--${element.dataset.tab}`)
+                    .classList.remove("operations__content--active");
             }
         });
     }
