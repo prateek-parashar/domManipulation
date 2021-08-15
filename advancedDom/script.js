@@ -46,3 +46,17 @@ learnMoreBtn.addEventListener("click", () => {
 
     section1.scrollIntoView({ behavior: "smooth" });
 });
+
+const h1Elem = document.querySelector("h1");
+
+h1Elem.addEventListener("click", () => {
+    alert("Don't touch me bro");
+});
+
+h1Elem.onmouseenter = () => {
+    console.log("Oh you wanna go at it?");
+};
+
+h1Elem.addEventListener("mouseleave", () => {
+    alert("Wherer are you now running away bitch");
+});
