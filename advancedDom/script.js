@@ -72,6 +72,25 @@ navContainer.addEventListener("click", function (e) {
 });
 
 ///////////////////////////////////////
+// Tabbed Component
+///////////////////////////////////////
+const tabsContainer = document.querySelector(".operations__tab-container");
+
+const tabsContent = document.querySelectorAll(".operations__content");
+
+tabsContainer.addEventListener("click", function (e) {
+    if (e.target.classList.contains("operations__tab")) {
+        e.target.classList.add("operations__tab--active");
+
+        [...e.target.parentElement.children].forEach((element) => {
+            if (element !== e.target) {
+                element.classList.remove("operations__tab--active");
+            }
+        });
+    }
+});
+
+///////////////////////////////////////
 //const h1Elem = document.querySelector("h1");
 
 //h1Elem.addEventListener("click", () => {
