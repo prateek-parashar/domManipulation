@@ -83,19 +83,16 @@ tabsContainer.addEventListener("click", function (e) {
 
     if (!clicked) return;
 
+    [...clicked.parentElement.children].forEach((element) => {
+        element.classList.remove("operations__tab--active");
+        document
+            .querySelector(`.operations__content--${element.dataset.tab}`)
+            .classList.remove("operations__content--active");
+    });
+
     clicked.classList.add("operations__tab--active");
 
     document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add("operations__content--active");
-
-    [...clicked.parentElement.children].forEach((element) => {
-        if (element !== clicked) {
-            element.classList.remove("operations__tab--active");
-
-            document
-                .querySelector(`.operations__content--${element.dataset.tab}`)
-                .classList.remove("operations__content--active");
-        }
-    });
 });
 
 ///////////////////////////////////////
