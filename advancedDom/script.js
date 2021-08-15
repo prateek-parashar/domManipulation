@@ -79,23 +79,23 @@ const tabsContainer = document.querySelector(".operations__tab-container");
 const tabsContent = document.querySelectorAll(".operations__content");
 
 tabsContainer.addEventListener("click", function (e) {
-    if (e.target.classList.contains("operations__tab")) {
-        e.target.classList.add("operations__tab--active");
+    const clicked = e.target.closest(".operations__tab");
 
-        document
-            .querySelector(`.operations__content--${e.target.dataset.tab}`)
-            .classList.add("operations__content--active");
+    if (!clicked) return;
 
-        [...e.target.parentElement.children].forEach((element) => {
-            if (element !== e.target) {
-                element.classList.remove("operations__tab--active");
+    clicked.classList.add("operations__tab--active");
 
-                document
-                    .querySelector(`.operations__content--${element.dataset.tab}`)
-                    .classList.remove("operations__content--active");
-            }
-        });
-    }
+    document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add("operations__content--active");
+
+    [...clicked.parentElement.children].forEach((element) => {
+        if (element !== clicked) {
+            element.classList.remove("operations__tab--active");
+
+            document
+                .querySelector(`.operations__content--${element.dataset.tab}`)
+                .classList.remove("operations__content--active");
+        }
+    });
 });
 
 ///////////////////////////////////////
