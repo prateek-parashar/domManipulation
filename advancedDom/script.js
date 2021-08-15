@@ -54,7 +54,6 @@ learnMoreBtn.addEventListener("click", () => {
 
 const nav = document.querySelector(".nav");
 const navContainer = document.querySelector(".nav__links");
-const navLink = document.querySelector(".nav__link");
 
 // Using the event delegation to select the event on the parent element ->
 /**
@@ -93,6 +92,34 @@ tabsContainer.addEventListener("click", function (e) {
     clicked.classList.add("operations__tab--active");
 
     document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add("operations__content--active");
+});
+
+///////////////////////////////////////
+// Hover Effect
+///////////////////////////////////////
+
+const hoverHandler = (e, opacity) => {
+    const link = e.target;
+    if (link.classList.contains("nav__link")) {
+        const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+        const logo = link.closest(".nav").querySelector("img");
+
+        for (const element of siblings) {
+            if (element != link) {
+                element.style.opacity = opacity;
+            }
+        }
+
+        logo.style.opacity = opacity;
+    }
+};
+
+nav.addEventListener("mouseover", (e) => {
+    hoverHandler(e, 0.5);
+});
+
+nav.addEventListener("mouseout", (e) => {
+    hoverHandler(e, 1);
 });
 
 ///////////////////////////////////////
