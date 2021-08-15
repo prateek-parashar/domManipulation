@@ -32,31 +32,89 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
+///////////////////////////////////////
+// Page Navigation
+///////////////////////////////////////
+
 // Implementation of smooth scrolling
+
 const learnMoreBtn = document.querySelector(".btn--scroll-to");
 const section1 = document.getElementById("section--1");
 
 learnMoreBtn.addEventListener("click", () => {
-    // const sectionCoord = section1.getBoundingClientRect();
-    // window.scrollTo({
-    // top: sectionCoord.top + window.pageYOffset,
-    // left: 0,
-    // behavior: "smooth",
-    // });
+    const sectionCoord = section1.getBoundingClientRect();
+    window.scrollTo({
+        top: sectionCoord.top + window.pageYOffset,
+        left: 0,
+        behavior: "smooth",
+    });
 
     section1.scrollIntoView({ behavior: "smooth" });
 });
 
-const h1Elem = document.querySelector("h1");
+const nav = document.querySelector(".nav");
+const navContainer = document.querySelector(".nav__links");
+const navLink = document.querySelector(".nav__link");
 
-h1Elem.addEventListener("click", () => {
-    alert("Don't touch me bro");
+// Using the event delegation to select the event on the parent element ->
+/**
+ * - Assign the event listener to the common parent element
+ * - Find the event target, ( the element where the event originated from)
+ * - User the matching strategy to filter out the original elements from the parent
+ */
+
+navContainer.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (e.target.classList.contains("nav__link")) {
+        const targetElemId = e.target.getAttribute("href").slice(1);
+        document.getElementById(targetElemId).scrollIntoView({ behavior: "smooth" });
+    }
 });
 
-h1Elem.onmouseenter = () => {
-    console.log("Oh you wanna go at it?");
-};
+///////////////////////////////////////
+//const h1Elem = document.querySelector("h1");
 
-h1Elem.addEventListener("mouseleave", () => {
-    alert("Wherer are you now running away bitch");
-});
+//h1Elem.addEventListener("click", () => {
+//alert("Don't touch me bro");
+//});
+
+//h1Elem.onmouseenter = () => {
+//console.log("Oh you wanna go at it?");
+//};
+
+//h1Elem.addEventListener("mouseleave", () => {
+//alert("Wherer are you now running away bitch");
+//});
+
+// Event capturing and bubbling phase
+
+/**
+ * Here you can see the event bubbles up and all the eventListeners above the dom tree in a particular element are fired from the same event
+ */
+
+//const header = document.querySelector(".nav");
+//const navOl = document.querySelector(".nav__links");
+//const navLink = document.querySelector(".nav__link");
+
+//const getRandomNumber = (min, max) => {
+//return Math.floor(Math.random() * (max - min) + min);
+//};
+
+//const randomColorString = () => {
+//return `rgb(${getRandomNumber(0, 255)}, ${getRandomNumber(0, 255)}, ${getRandomNumber(0, 255)})`;
+//};
+
+//navLink.addEventListener("click", function () {
+//this.href = "#";
+//this.style.backgroundColor = randomColorString();
+//});
+
+//navOl.addEventListener("click", function () {
+//this.href = "#";
+//this.style.backgroundColor = randomColorString();
+//});
+
+//header.addEventListener("click", function () {
+//this.href = "#";
+//this.style.backgroundColor = randomColorString();
+//});
