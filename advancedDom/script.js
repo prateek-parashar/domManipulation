@@ -123,6 +123,42 @@ nav.addEventListener("mouseout", (e) => {
 });
 
 ///////////////////////////////////////
+// Sticky Navigation bar
+///////////////////////////////////////
+
+/**
+ * Below methods works but is terribly inefficient
+ */
+//const initCoords = section1.getBoundingClientRect().y;
+//console.log(initCoords);
+
+//window.addEventListener("scroll", () => {
+//if (window.scrollY >= initCoords) {
+//nav.classList.add("sticky");
+//}
+//});
+
+// Proper implementaion using the intersection Observer
+const stickyImplementer = (entries) => {
+    const [entry] = entries;
+    if (!entry.isIntersecting) {
+        nav.classList.add("sticky");
+    } else {
+        nav.classList.remove("sticky");
+    }
+};
+
+//Using the Intersection Observer
+const headerObserver = new IntersectionObserver(stickyImplementer, {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${window.getComputedStyle(nav).height}`,
+});
+const header = document.querySelector(".header");
+
+headerObserver.observe(header);
+
+///////////////////////////////////////
 //const h1Elem = document.querySelector("h1");
 
 //h1Elem.addEventListener("click", () => {
