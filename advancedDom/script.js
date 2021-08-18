@@ -163,10 +163,6 @@ headerObserver.observe(header);
 ///////////////////////////////////////
 const sections = document.querySelectorAll(".section");
 
-for (const section of sections) {
-    section.classList.add("section--hidden");
-}
-
 const sectionObserver = new IntersectionObserver(
     (entries, observer) => {
         const [entry] = entries;
@@ -182,6 +178,7 @@ const sectionObserver = new IntersectionObserver(
 );
 
 for (const section of sections) {
+    section.classList.add("section--hidden");
     sectionObserver.observe(section);
 }
 
