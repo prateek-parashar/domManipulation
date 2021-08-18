@@ -159,6 +159,33 @@ const header = document.querySelector(".header");
 headerObserver.observe(header);
 
 ///////////////////////////////////////
+// Section transitioning upwards on scrolling
+///////////////////////////////////////
+const sections = document.querySelectorAll(".section");
+
+for (const section of sections) {
+    section.classList.add("section--hidden");
+}
+
+const sectionObserver = new IntersectionObserver(
+    (entries, observer) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+            entry.target.classList.remove("section--hidden");
+            observer.unobserve(entry.target);
+        }
+    },
+    {
+        root: null,
+        threshold: 0.2,
+    }
+);
+
+for (const section of sections) {
+    sectionObserver.observe(section);
+}
+
+///////////////////////////////////////
 //const h1Elem = document.querySelector("h1");
 
 //h1Elem.addEventListener("click", () => {
