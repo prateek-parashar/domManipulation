@@ -183,6 +183,33 @@ for (const section of sections) {
 }
 
 ///////////////////////////////////////
+// Lazy loading of images
+///////////////////////////////////////
+
+const images = section1.querySelectorAll("img");
+
+const lazyloader = (entries, observer) => {
+    const [entry] = entries;
+    if (!entry.isIntersecting) {
+        return;
+    }
+    const imageElm = entry.target;
+    console.log("Triggered");
+    imageElm.setAttribute("src", imageElm.dataset.src);
+    imageElm.classList.remove("lazy-img");
+    observer.unobserve(imageElm);
+};
+
+const imageObserver = new IntersectionObserver(lazyloader, {
+    root: null,
+    threshold: 0.3,
+});
+
+for (const image of images) {
+    imageObserver.observe(image);
+}
+
+///////////////////////////////////////
 //const h1Elem = document.querySelector("h1");
 
 //h1Elem.addEventListener("click", () => {
