@@ -178,7 +178,7 @@ const sectionObserver = new IntersectionObserver(
 );
 
 for (const section of sections) {
-    section.classList.add("section--hidden");
+    // section.classList.add("section--hidden");
     sectionObserver.observe(section);
 }
 
@@ -194,7 +194,6 @@ const lazyloader = (entries, observer) => {
         return;
     }
     const imageElm = entry.target;
-    console.log("Triggered");
     imageElm.setAttribute("src", imageElm.dataset.src);
 
     /**
@@ -215,6 +214,42 @@ const imageObserver = new IntersectionObserver(lazyloader, {
 });
 
 images.forEach((image) => imageObserver.observe(image));
+
+///////////////////////////////////////
+// Slider component
+///////////////////////////////////////
+const slider = document.querySelector(".slider");
+const slides = document.querySelectorAll(".slide");
+const slideRightBtn = document.querySelector(".slider__btn--right");
+const slideLeftBtn = document.querySelector(".slider__btn--left");
+let visibleSlide = 0;
+
+slides.forEach((slide, i, slides) => {
+    slide.style.transform = `translateX(${i * 100}%`;
+});
+
+const slideRightBtnHandler = () => {
+    if (visibleSlide >= slides.length - 1) {
+        visibleSlide = -1;
+    }
+    visibleSlide += 1;
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${(i - visibleSlide) * 100}%`;
+    });
+};
+
+const slideLeftBtnHandler = () => {
+    if (visibleSlide <= 0) {
+        visibleSlide = slides.length;
+    }
+    visibleSlide -= 1;
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${(i - visibleSlide) * 100}%`;
+    });
+};
+
+slideRightBtn.addEventListener("click", slideRightBtnHandler);
+slideLeftBtn.addEventListener("click", slideLeftBtnHandler);
 
 ///////////////////////////////////////
 //const h1Elem = document.querySelector("h1");
