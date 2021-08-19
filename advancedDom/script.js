@@ -178,7 +178,7 @@ const sectionObserver = new IntersectionObserver(
 );
 
 for (const section of sections) {
-    // section.classList.add("section--hidden");
+    section.classList.add("section--hidden");
     sectionObserver.observe(section);
 }
 
