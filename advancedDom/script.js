@@ -224,28 +224,30 @@ const slideRightBtn = document.querySelector(".slider__btn--right");
 const slideLeftBtn = document.querySelector(".slider__btn--left");
 let visibleSlide = 0;
 
-slides.forEach((slide, i, slides) => {
-    slide.style.transform = `translateX(${i * 100}%`;
-});
+const moveToSlide = (slide) => {
+    slides.forEach((s, i) => {
+        s.style.transform = `translateX(${(i - slide) * 100}%`;
+    });
+};
+
+moveToSlide(0);
 
 const slideRightBtnHandler = () => {
     if (visibleSlide >= slides.length - 1) {
-        visibleSlide = -1;
+        visibleSlide = 0;
+    } else {
+        visibleSlide += 1;
     }
-    visibleSlide += 1;
-    slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${(i - visibleSlide) * 100}%`;
-    });
+    moveToSlide(visibleSlide);
 };
 
 const slideLeftBtnHandler = () => {
     if (visibleSlide <= 0) {
-        visibleSlide = slides.length;
+        visibleSlide = slides.length - 1;
+    } else {
+        visibleSlide -= 1;
     }
-    visibleSlide -= 1;
-    slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${(i - visibleSlide) * 100}%`;
-    });
+    moveToSlide(visibleSlide);
 };
 
 slideRightBtn.addEventListener("click", slideRightBtnHandler);
