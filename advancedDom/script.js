@@ -186,7 +186,7 @@ for (const section of sections) {
 // Lazy loading of images
 ///////////////////////////////////////
 
-const images = section1.querySelectorAll("img");
+const images = document.querySelectorAll("img[data-src");
 
 const lazyloader = (entries, observer) => {
     const [entry] = entries;
@@ -202,12 +202,10 @@ const lazyloader = (entries, observer) => {
 
 const imageObserver = new IntersectionObserver(lazyloader, {
     root: null,
-    threshold: 0.3,
+    threshold: 0.6,
 });
 
-for (const image of images) {
-    imageObserver.observe(image);
-}
+images.forEach((image) => imageObserver.observe(image));
 
 ///////////////////////////////////////
 //const h1Elem = document.querySelector("h1");
