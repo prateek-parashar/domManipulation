@@ -196,7 +196,15 @@ const lazyloader = (entries, observer) => {
     const imageElm = entry.target;
     console.log("Triggered");
     imageElm.setAttribute("src", imageElm.dataset.src);
-    imageElm.classList.remove("lazy-img");
+
+    /**
+     * Remove the blur filter only after the image has been successfully loader
+     * As for slower connections, you might see the blurred images if you remove the filter
+     * because the image loading will take more time
+     */
+    imageElm.addEventListener("load", function () {
+        this.classList.remove("lazy-img");
+    });
     observer.unobserve(imageElm);
 };
 
